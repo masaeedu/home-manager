@@ -1394,6 +1394,30 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-accounts.contact.accounts._name_.khard.defaultCollection"></a><a class="term" href="options.xhtml#opt-accounts.contact.accounts._name_.khard.defaultCollection"><code class="option">accounts.contact.accounts.&lt;name&gt;.khard.defaultCollection</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>VCARD collection to be searched by khard.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/khard.nix" target="_top">
+&lt;home-manager/modules/programs/khard.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-accounts.contact.accounts._name_.local"></a><a class="term" href="options.xhtml#opt-accounts.contact.accounts._name_.local"><code class="option">accounts.contact.accounts.&lt;name&gt;.local</code>
   </a>
  </span>
@@ -11096,6 +11120,38 @@ null or package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-nix.channels"></a><a class="term" href="options.xhtml#opt-nix.channels"><code class="option">nix.channels</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A declarative alternative to Nix channels. Whereas with stock channels,
+you would register URLs and fetch them into the Nix store with
+<span class="citerefentry"><span class="refentrytitle">nix-channel</span>(1)</span>, this option allows you to register the store
+path directly. One particularly useful example is registering flake
+inputs as channels.</p><p>This option can coexist with stock Nix channels. If the same channel is
+defined in both, this option takes precedence.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">{ inherit nixpkgs; }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix" target="_top">
+&lt;home-manager/modules/misc/nix.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-nix.checkConfig"></a><a class="term" href="options.xhtml#opt-nix.checkConfig"><code class="option">nix.checkConfig</code>
   </a>
  </span>
@@ -11255,6 +11311,65 @@ boolean</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/nix-gc.nix" target="_top">
 &lt;home-manager/modules/services/nix-gc.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-nix.keepOldNixPath"></a><a class="term" href="options.xhtml#opt-nix.keepOldNixPath"><code class="option">nix.keepOldNixPath</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether <code class="option">nix.nixPath</code> should keep the previously set values in
+<code class="envar">NIX_PATH</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix" target="_top">
+&lt;home-manager/modules/misc/nix.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-nix.nixPath"></a><a class="term" href="options.xhtml#opt-nix.nixPath"><code class="option">nix.nixPath</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Adds new directories to the Nix expression search path.</p><p>Used by Nix when looking up paths in angular brackets
+(e.g. <code class="literal">&lt;nixpkgs&gt;</code>).</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  &quot;$HOME/.nix-defexpr/channels&quot;
+  &quot;darwin-config=$HOME/.config/nixpkgs/darwin-configuration.nix&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix" target="_top">
+&lt;home-manager/modules/misc/nix.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -17579,6 +17694,33 @@ package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.direnv.silent"></a><a class="term" href="options.xhtml#opt-programs.direnv.silent"><code class="option">programs.direnv.silent</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable silent mode, that is, disabling direnv logging.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix" target="_top">
+&lt;home-manager/modules/programs/direnv.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.direnv.stdlib"></a><a class="term" href="options.xhtml#opt-programs.direnv.stdlib"><code class="option">programs.direnv.stdlib</code>
   </a>
  </span>
@@ -18031,6 +18173,87 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.eww.enableBashIntegration"></a><a class="term" href="options.xhtml#opt-programs.eww.enableBashIntegration"><code class="option">programs.eww.enableBashIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Bash integration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/eww.nix" target="_top">
+&lt;home-manager/modules/programs/eww.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.eww.enableFishIntegration"></a><a class="term" href="options.xhtml#opt-programs.eww.enableFishIntegration"><code class="option">programs.eww.enableFishIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Fish integration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/eww.nix" target="_top">
+&lt;home-manager/modules/programs/eww.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.eww.enableZshIntegration"></a><a class="term" href="options.xhtml#opt-programs.eww.enableZshIntegration"><code class="option">programs.eww.enableZshIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Zsh integration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/eww.nix" target="_top">
+&lt;home-manager/modules/programs/eww.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.eww.package"></a><a class="term" href="options.xhtml#opt-programs.eww.package"><code class="option">programs.eww.package</code>
   </a>
  </span>
@@ -18421,7 +18644,9 @@ JSON value</p>
     };
   };
   display = {
-    binaryPrefix = &quot;si&quot;;
+    size = {
+      binaryPrefix = &quot;si&quot;;
+    };
     color = &quot;blue&quot;;
     separator = &quot;  &quot;;
   };
@@ -18776,7 +19001,7 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>The Firefox package to use. If state version ≥ 19.09 then
+<p>The Firefox package to use. If state version ≥ 19.09 then
 this should be a wrapped Firefox package. For earlier state
 versions it should be an unwrapped Firefox package.
 Set to <code class="literal">null</code> to disable installing Firefox.</p>
@@ -18819,6 +19044,39 @@ null or package</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 null or package <span class="emphasis"><em>(read only)</em></span></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix" target="_top">
+&lt;home-manager/modules/programs/firefox.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.firefox.languagePacks"></a><a class="term" href="options.xhtml#opt-programs.firefox.languagePacks"><code class="option">programs.firefox.languagePacks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The language packs to install. Available language codes can be found
+on the releases page:
+<code class="literal">https://releases.mozilla.org/pub/firefox/releases/${version}/linux-x86_64/xpi/</code>,
+replacing <code class="literal">${version}</code> with the version of Firefox you have.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  &quot;en-GB&quot;
+  &quot;de&quot;
+]
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -19107,10 +19365,10 @@ string</p>
  </span>
 </dt>
 <dd>
-<p>Whether to force replace the existing containers
-configuration. This is recommended since Firefox will
-replace the symlink on every launch, but note that you’ll
-lose any existing configuration by enabling this.</p>
+<p>Whether to force replace the existing containers configuration.
+This is recommended since Firefox will replace the symlink on
+every launch, but note that you’ll lose any existing configuration
+by enabling this.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -19134,12 +19392,12 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>List of Firefox add-on packages to install for this profile.
+<p>List of ‹name› add-on packages to install for this profile.
 Some pre-packaged add-ons are accessible from the
 <a class="link" href="https://github.com/nix-community/NUR"  target="_top">Nix User Repository</a>.
 Once you have NUR installed run</p><pre><code class="programlisting console">$ nix-env -f &#x27;&lt;nixpkgs&gt;&#x27; -qaP -A nur.repos.rycee.firefox-addons
-</code></pre><p>to list the available Firefox add-ons.</p><p>Note that it is necessary to manually enable these extensions
-inside Firefox after the first installation.</p><p>To automatically enable extensions add
+</code></pre><p>to list the available ‹name› add-ons.</p><p>Note that it is necessary to manually enable these extensions
+inside ‹name› after the first installation.</p><p>To automatically enable extensions add
 <code class="literal">&quot;extensions.autoDisableScopes&quot; = 0;</code>
 to
 <a class="link" href="options.xhtml#opt-programs.firefox.profiles._name_.settings"  ><code class="option">programs.firefox.profiles.&lt;profile&gt;.settings</code></a></p>
@@ -19321,7 +19579,7 @@ null or string</p>
 <dd>
 <p>Attribute set of search engine configurations. Engines
 that only have <code class="varname">metaData</code> specified will
-be treated as builtin to Firefox.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177"  target="_top">SearchEngine.jsm</a>
+be treated as builtin to ‹name›.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177"  target="_top">SearchEngine.jsm</a>
 in Firefox’s source for available options. We maintain a
 mapping to let you specify all options in the referenced
 link without underscores, but it may fall out of date with
@@ -19379,7 +19637,7 @@ attribute set of attribute set of (JSON value)</p>
 </dt>
 <dd>
 <p>Whether to force replace the existing search
-configuration. This is recommended since Firefox will
+configuration. This is recommended since ‹name› will
 replace the symlink for the search configuration on every
 launch, but note that you’ll lose any existing
 configuration by enabling this.</p>
@@ -19465,12 +19723,12 @@ null or string</p>
  </span>
 </dt>
 <dd>
-<p>Attribute set of Firefox preferences.</p><p>Firefox only supports int, bool, and string types for
+<p>Attribute set of ‹name› preferences.</p><p>‹name› only supports int, bool, and string types for
 preferences, but home-manager will automatically
 convert all other JSON-compatible values into strings.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-attribute set of (Firefox preference (int, bool, string, and also attrs, list, float as a JSON string))</p>
+attribute set of (‹name› preference (int, bool, string, and also attrs, list, float as a JSON string))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -19506,7 +19764,7 @@ attribute set of (Firefox preference (int, bool, string, and also attrs, list, f
  </span>
 </dt>
 <dd>
-<p>Custom Firefox user chrome CSS.</p>
+<p>Custom ‹name› user chrome CSS.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 strings concatenated with “\n”</p>
@@ -19516,7 +19774,7 @@ strings concatenated with “\n”</p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">&#x27;&#x27;
   /* Hide tab bar in FF Quantum */
-  @-moz-document url(&quot;chrome://browser/content/browser.xul&quot;) {
+  @-moz-document url(chrome://browser/content/browser.xul), url(chrome://browser/content/browser.xhtml) {
     #TabsToolbar {
       visibility: collapse !important;
       margin-bottom: 21px !important;
@@ -19545,7 +19803,7 @@ strings concatenated with “\n”</p>
  </span>
 </dt>
 <dd>
-<p>Custom Firefox user content CSS.</p>
+<p>Custom ‹name› user content CSS.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 strings concatenated with “\n”</p>
@@ -32199,6 +32457,52 @@ one of “emacs”, “vim”</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.mcfly.settings"></a><a class="term" href="options.xhtml#opt-programs.mcfly.settings"><code class="option">programs.mcfly.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Settings written to <code class="filename">~/.config/mcfly/config.toml</code>.</p><p>Note, if your McFly database is currently in <code class="filename">~/.mcfly</code>,
+then this option has no effect.
+Move the database to <code class="filename">$XDG_DATA_DIR/mcfly/history.db</code> and
+remove <code class="filename">~/.mcfly</code> to make the settings take effect. See
+<a class="link" href="https://github.com/cantino/mcfly#database-location"  target="_top">https://github.com/cantino/mcfly#database-location</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  colors = {
+    menubar = {
+      bg = &quot;black&quot;;
+      fg = &quot;red&quot;;
+    };
+    darkmode = {
+      prompt = &quot;cyan&quot;;
+      timing = &quot;yellow&quot;;
+      results_selection_fg = &quot;cyan&quot;;
+      results_selection_bg = &quot;black&quot;;
+      results_selection_hl = &quot;red&quot;;
+    };
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mcfly.nix" target="_top">
+&lt;home-manager/modules/programs/mcfly.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.mercurial.enable"></a><a class="term" href="options.xhtml#opt-programs.mercurial.enable"><code class="option">programs.mercurial.enable</code>
   </a>
  </span>
@@ -32415,6 +32719,30 @@ boolean</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/micro.nix" target="_top">
+&lt;home-manager/modules/programs/micro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.micro.package"></a><a class="term" href="options.xhtml#opt-programs.micro.package"><code class="option">programs.micro.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The micro package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.micro</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -32698,7 +33026,7 @@ boolean</p>
 package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&lt;derivation mpv-with-scripts-0.37.0&gt;</code></p>
+<code class="literal">&lt;derivation mpv-with-scripts-0.38.0&gt;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</code></p>
@@ -37637,6 +37965,30 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.papis.package"></a><a class="term" href="options.xhtml#opt-programs.papis.package"><code class="option">programs.papis.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The papis package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.papis</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/papis.nix" target="_top">
+&lt;home-manager/modules/programs/papis.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.papis.libraries"></a><a class="term" href="options.xhtml#opt-programs.papis.libraries"><code class="option">programs.papis.libraries</code>
   </a>
  </span>
@@ -40460,7 +40812,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;bitwarden.example.com&quot;</code></p>
+<code class="literal">&quot;https://bitwarden.example.com/&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -40511,7 +40863,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;identity.example.com&quot;</code></p>
+<code class="literal">&quot;https://identity.example.com/&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -45272,7 +45624,7 @@ package</p>
 of options.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-Starship configuration</p>
+TOML value</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -49693,7 +50045,7 @@ strings concatenated with “\n”</p>
 list of (string or package)</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
-  &lt;derivation vimplugin-vim-sensible-2023-03-29&gt;
+  &lt;derivation vimplugin-vim-sensible-2024-06-08&gt;
 ]
 </code></pre>
 
@@ -51932,7 +52284,9 @@ package</p>
  </span>
 </dt>
 <dd>
-<p>Pre-made themes.</p><p>See https://yazi-rs.github.io/docs/flavors/overview/ for documentation.</p>
+<p>Pre-made themes.
+Values should be a package or path containing the required files.
+Will be linked to <code class="filename">$XDG_CONFIG_HOME/yazi/flavors/&lt;name&gt;.yazi</code>.</p><p>See <a class="link" href="https://yazi-rs.github.io/docs/flavors/overview/"  target="_top">https://yazi-rs.github.io/docs/flavors/overview/</a> for documentation.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 attribute set of (path or package)</p>
@@ -51966,7 +52320,7 @@ attribute set of (path or package)</p>
 <p>The init.lua for Yazi itself.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or path</p>
+null or path or strings concatenated with “\n”</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">null</code></p>
@@ -52032,7 +52386,10 @@ TOML value</p>
  </span>
 </dt>
 <dd>
-<p>Lua plugins.</p><p>See https://yazi-rs.github.io/docs/plugins/overview/ for documentation.</p>
+<p>Lua plugins.
+Values should be a package or path containing an <code class="literal">init.lua</code> file.
+Will be linked to <code class="filename">$XDG_CONFIG_HOME/yazi/plugins/&lt;name&gt;.yazi</code>.</p><p>See <a class="link" href="https://yazi-rs.github.io/docs/plugins/overview"  target="_top">https://yazi-rs.github.io/docs/plugins/overview</a>
+for documentation.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 attribute set of (path or package)</p>
@@ -52086,6 +52443,33 @@ TOML value</p>
 }
 
 </code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/yazi.nix" target="_top">
+&lt;home-manager/modules/programs/yazi.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.yazi.shellWrapperName"></a><a class="term" href="options.xhtml#opt-programs.yazi.shellWrapperName"><code class="option">programs.yazi.shellWrapperName</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Name of the shell wrapper to be called.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;yy&quot;</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;y&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -53268,6 +53652,36 @@ null or string</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">&quot;fg=#ff00ff,bg=cyan,bold,underline&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix" target="_top">
+&lt;home-manager/modules/programs/zsh.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zsh.autosuggestion.strategy"></a><a class="term" href="options.xhtml#opt-programs.zsh.autosuggestion.strategy"><code class="option">programs.zsh.autosuggestion.strategy</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p><code class="literal">ZSH_AUTOSUGGEST_STRATEGY</code> is an array that specifies how suggestions should be generated.
+The strategies in the array are tried successively until a suggestion is found.
+There are currently three built-in strategies to choose from:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p><code class="literal">history</code>: Chooses the most recent match from history.</p></li><li class="listitem"><p><code class="literal">completion</code>: Chooses a suggestion based on what tab-completion would suggest. (requires <code class="literal">zpty</code> module)</p></li><li class="listitem"><p><code class="literal">match_prev_cmd</code>: Like <code class="literal">history</code>, but chooses the most recent match whose preceding history item matches
+the most recently executed command. Note that this strategy won’t work as expected with ZSH options that
+don’t preserve the history order such as <code class="literal">HIST_IGNORE_ALL_DUPS</code> or <code class="literal">HIST_EXPIRE_DUPS_FIRST</code>.</p></li></ul></div>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of (one of “history”, “completion”, “match_prev_cmd”)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
+  &quot;history&quot;
+]
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -57069,6 +57483,57 @@ signed integer</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-services.blanket.enable"></a><a class="term" href="options.xhtml#opt-services.blanket.enable"><code class="option">services.blanket.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable blanket.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/blanket.nix" target="_top">
+&lt;home-manager/modules/services/blanket.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.blanket.package"></a><a class="term" href="options.xhtml#opt-services.blanket.package"><code class="option">services.blanket.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The blanket package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.blanket</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/blanket.nix" target="_top">
+&lt;home-manager/modules/services/blanket.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-services.blueman-applet.enable"></a><a class="term" href="options.xhtml#opt-services.blueman-applet.enable"><code class="option">services.blueman-applet.enable</code>
   </a>
  </span>
@@ -58498,10 +58963,10 @@ from the immutable one, useful in scenarios where live reloading is
 desired.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-string or path</p>
+null or string or path</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;$XDG_CONFIG_HOME/dunst/dunstrc&quot;</code></p>
+<code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -58526,7 +58991,7 @@ submodule</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">{
   name = &quot;hicolor&quot;;
-  package = &lt;derivation hicolor-icon-theme-0.17&gt;;
+  package = &lt;derivation hicolor-icon-theme-0.18&gt;;
   size = &quot;32x32&quot;;
 }
 </code></pre>
@@ -60395,6 +60860,125 @@ string</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/git-sync.nix" target="_top">
 &lt;home-manager/modules/services/git-sync.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.glance.enable"></a><a class="term" href="options.xhtml#opt-services.glance.enable"><code class="option">services.glance.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable glance.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/glance.nix" target="_top">
+&lt;home-manager/modules/services/glance.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.glance.package"></a><a class="term" href="options.xhtml#opt-services.glance.package"><code class="option">services.glance.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The glance package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.glance</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/glance.nix" target="_top">
+&lt;home-manager/modules/services/glance.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.glance.settings"></a><a class="term" href="options.xhtml#opt-services.glance.settings"><code class="option">services.glance.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to a yaml file that is read by glance. See
+<a class="link" href="https://github.com/glanceapp/glance/blob/main/docs/configuration.md"  target="_top">https://github.com/glanceapp/glance/blob/main/docs/configuration.md</a>
+for more.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+YAML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">{
+  pages = [
+    {
+      columns = [
+        {
+          size = &quot;full&quot;;
+          widgets = [
+            {
+              type = &quot;calendar&quot;;
+            }
+          ];
+        }
+      ];
+      name = &quot;Calendar&quot;;
+    }
+  ];
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  pages = [
+    {
+      columns = [
+        {
+          size = &quot;full&quot;;
+          widgets = [
+            {
+              type = &quot;calendar&quot;;
+            }
+            {
+              location = &quot;London, United Kingdom&quot;;
+              type = &quot;weather&quot;;
+            }
+          ];
+        }
+      ];
+      name = &quot;Home&quot;;
+    }
+  ];
+  server = {
+    port = 5678;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/glance.nix" target="_top">
+&lt;home-manager/modules/services/glance.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -75236,16 +75820,17 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>Whether to enable Hyprland wayland compositor.</p>
+<p>Whether to enable configuration for Hyprland, a tiling Wayland
+compositor that doesn’t sacrifice on its looks.</p><div class="note"><h3 class="title">Note</h3><p>This module configures Hyprland and adds it to your user’s <code class="envar">PATH</code>,
+but does not make certain system-level changes. NixOS users should
+enable the NixOS module with <code class="option">programs.hyprland.enable</code>, which
+makes system-level changes such as adding a desktop session entry.</p></div>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">false</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">true</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -78647,7 +79232,10 @@ boolean</p>
 list of string</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
+  &quot;systemctl --user reset-failed&quot;
   &quot;systemctl --user start sway-session.target&quot;
+  &quot;swaymsg -mt subscribe &#x27;[]&#x27; || true&quot;
+  &quot;systemctl --user stop sway-session.target&quot;
 ]
 </code></pre>
 
@@ -78685,7 +79273,7 @@ list of string</p>
 </code></pre>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
-  &quot;-all&quot;
+  &quot;--all&quot;
 ]
 </code></pre>
 
@@ -79777,7 +80365,7 @@ null or boolean</p>
 <p>Whether the program runs in a terminal window.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-boolean</p>
+null or boolean</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">false</code></p>
